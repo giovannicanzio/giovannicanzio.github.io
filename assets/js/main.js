@@ -140,7 +140,7 @@
                 var emailFieldValue = $('#contactForm #email').val();
                 var messageFieldValue = $('#contactForm #message').val();
                 $.ajax({
-                    url: "https://formspree.io/nickebart@gmail.com", 
+                    url: "https://formspree.io/giovanni.canzio@gmail.com", 
                     method: "POST",
                     data: {
                         name: nameFieldValue,
