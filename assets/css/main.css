@@ -2846,9 +2846,27 @@
         font-weight: bolder;
     }
 
+    #experience .skill-icons {
+        float: left;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #experience .skill-icons .icon{
+        margin-top: 20px;
+    }
+
 /* Skills */
     .skills span {
         margin: 10px 20px;
+        cursor: default;
+        -moz-transition: none;
+        -webkit-transition: none;
+        -ms-transition: none;
+    }
+
+    .skills span:hover {
+        background: #fff !important;
     }
 
 /* Features */
