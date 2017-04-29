@@ -134,6 +134,32 @@
 				speed: 1000
 			});
 
+            $('#contactForm').submit(function(e){
+                e.preventDefault();
+                var nameFieldValue = $('#contactForm #name').val();
+                var emailFieldValue = $('#contactForm #email').val();
+                var messageFieldValue = $('#contactForm #message').val();
+                $.ajax({
+                    url: "https://formspree.io/nickebart@gmail.com", 
+                    method: "POST",
+                    data: {
+                        name: nameFieldValue,
+                        email: emailFieldValue,
+                        message: messageFieldValue 
+                    },
+                    dataType: "json"
+                }).success(function(){
+                    $('#contactFormFeedback .heading').html('Thank you for getting in touch!');
+                    $('#contactFormFeedback .message').html('I will respond you as soon as possible.'); 
+                }).fail(function(){
+                    $('#contactFormFeedback .heading').html('Ouch!');
+                    $('#contactFormFeedback .message').html('There was a problem while sending the email.<br />Please write at <a href="mailto:giovanni.canzio@gmail.com?subject=manually sent email, formspree service failure">giovanni.canzio@gmail.com</a>'); 
+                }).complete(function(){
+                    $('#contactForm').hide();
+                    $('#contactFormFeedback').show();
+                })
+            })
+
 	});
 
 })(jQuery);
