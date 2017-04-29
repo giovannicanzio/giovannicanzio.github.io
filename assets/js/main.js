@@ -149,10 +149,10 @@
                     },
                     dataType: "json"
                 }).success(function(){
-                    $('#contactFormFeedback .heading').html('Thank you for getting in touch!');
+                    $('#contactFormFeedback .heading').html('<span class="icon minor style1 fa-check"></span>Thank you for getting in touch!');
                     $('#contactFormFeedback .message').html('I will respond you as soon as possible.'); 
                 }).fail(function(){
-                    $('#contactFormFeedback .heading').html('Ouch!');
+                    $('#contactFormFeedback .heading').html('<span class="icon minor style1 fa-exclamation-triangle"></span></span>Ouch!');
                     $('#contactFormFeedback .message').html('There was a problem while sending the email.<br />Please write at <a href="mailto:giovanni.canzio@gmail.com?subject=manually sent email, formspree service failure">giovanni.canzio@gmail.com</a>'); 
                 }).complete(function(){
                     $('#contactForm').hide();
