@@ -133,36 +133,6 @@
 			$('.scrolly').scrolly({
 				speed: 1000
 			});
-
-            $('#contactForm').submit(function(e){
-                e.preventDefault();
-                var nameFieldValue = $('#contactForm #name').val();
-                var emailFieldValue = $('#contactForm #email').val();
-                var messageFieldValue = $('#contactForm #message').val();
-                $.ajax({
-                    url: "https://formspree.io/giovanni.canzio@gmail.com", 
-                    method: "POST",
-                    data: {
-                        name: nameFieldValue,
-                        email: emailFieldValue,
-                        message: messageFieldValue 
-                    },
-                    dataType: "json"
-                }).success(function(resp){
-                    $('#contactFormFeedback .heading').html('<span class="icon minor style1 fa-check"></span>Thank you for getting in touch!');
-                    $('#contactFormFeedback .message').html('I will respond you as soon as possible.'); 
-                    console.log(resp);
-                }).fail(function(resp){
-                    $('#contactFormFeedback .heading').html('<span class="icon minor style1 fa-exclamation-triangle"></span></span>Ouch!');
-                    $('#contactFormFeedback .message').html('There was a problem while sending the email.<br />Please write at <a href="mailto:giovanni.canzio@gmail.com?subject=manually sent email, formspree service failure">giovanni.canzio@gmail.com</a>'); 
-                    console.log(resp);
-                }).complete(function(resp){
-                    $('#contactForm').hide();
-                    $('#contactFormFeedback').show();
-                    console.log(resp);
-                })
-            })
-
 	});
 
 })(jQuery);
